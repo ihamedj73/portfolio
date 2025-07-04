@@ -1,1 +1,65 @@
 @import "tailwindcss";
+
+@theme {
+  --breakpoint-xs32: 20rem;
+  --breakpoint-xs40: 25rem;
+  --breakpoint-xs48: 30rem;
+  --breakpoint-xs56: 35rem;
+  --breakpoint-smd: 44rem;
+  --breakpoint-slg: 55rem;
+  --breakpoint-sxl: 72rem;
+  --breakpoint-s2xl: 88rem;
+
+  --color-primary-50: #e8efff;
+  --color-primary-100: #d0dffe;
+  --color-primary-200: #a1befe;
+  --color-primary-300: #739efd;
+  --color-primary-400: #447dfd;
+  --color-primary-500: #155dfc;
+  --color-primary-600: #114aca;
+  --color-primary-700: #0d3897;
+  --color-primary-800: #082565;
+  --color-primary-900: #041332;
+
+  --color-gray-50: #f0f1f5;
+  --color-gray-100: #e0e4eb;
+  --color-gray-200: #c2c9d6;
+  --color-gray-300: #a3adc2;
+  --color-gray-400: #8592ad;
+  --color-gray-500: #667799;
+  --color-gray-600: #525f7a;
+  --color-gray-700: #3d475c;
+  --color-gray-800: #29303d;
+  --color-gray-900: #14181f;
+}
+
+.container {
+  @apply xs32:px-4 mx-auto max-w-7xl px-2.5;
+}
+body {
+  @apply bg-white leading-[1] text-gray-500;
+  font-family: "Nunito", sans-serif;
+}
+
+/*
+
+  xs: '360px',     // اکثر گوشی‌های کوچک
+  sm: '640px',     // Tailwind پیش‌فرض
+  md: '768px',     // تبلت
+  lg: '1024px',    // لپ‌تاپ
+  xl: '1280px',    // دسکتاپ
+  '2xl': '1536px', // مانیتور بزرگ
+  '3xl': '1800px', // دلخواه برای مانیتورهای UltraWide
+}
+
+mobile: 320  400  480  560  640
+
+tablet: 640 704  768
+
+laptop: 748 886  1024
+
+Desktop: 1024 1150  1280
+BG: 1280 1408 1536
+
+
+*/
