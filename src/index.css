@@ -5,10 +5,10 @@
   --breakpoint-xs40: 25rem;
   --breakpoint-xs48: 30rem;
   --breakpoint-xs56: 35rem;
-  --breakpoint-smd: 44rem;
-  --breakpoint-slg: 55rem;
-  --breakpoint-sxl: 72rem;
-  --breakpoint-s2xl: 88rem;
+  --breakpoint-smd: 44rem; /* 704px */
+  --breakpoint-slg: 55rem; /* 880px */
+  --breakpoint-sxl: 72rem; /* 1152px */
+  --breakpoint-s2xl: 88rem; /* 1408px */
 
   --color-primary-50: #e8efff;
   --color-primary-100: #d0dffe;
@@ -21,6 +21,7 @@
   --color-primary-800: #082565;
   --color-primary-900: #041332;
 
+  --color-gray-25: #f1f1f4;
   --color-gray-50: #f0f1f5;
   --color-gray-100: #e0e4eb;
   --color-gray-200: #c2c9d6;
@@ -33,12 +34,24 @@
   --color-gray-900: #14181f;
 }
 
-.container {
-  @apply xs32:px-4 mx-auto max-w-7xl px-2.5;
+.c-container {
+  @apply xs32:px-4 xs40:px-5 xs56:px-6 mx-auto max-w-7xl px-2.5 sm:px-8 md:px-9 lg:px-10 xl:px-12 2xl:max-w-[96rem] 2xl:px-24;
+
+  /* @apply mx-auto w-full px-4 xsm:px-5 xsm2:px-6 sm:px-8 md:px-9 lg:px-10 xl:max-w-[1280px] xl:px-12 2xl:max-w-[1536px] 2xl:px-24; */
 }
+
 body {
   @apply bg-white leading-[1] text-gray-500;
   font-family: "Nunito", sans-serif;
+}
+
+/* ***************** Global classes ***************** */
+.lazy-img {
+  @apply blur-xl;
+}
+
+.center-all {
+  @apply flex items-center justify-center;
 }
 
 /*
