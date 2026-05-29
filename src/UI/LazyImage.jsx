@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 function LazyImage({
   lazySrc = "img/lazy.jpg",
@@ -7,26 +7,39 @@ function LazyImage({
   className,
   ...props
 }) {
-  const ref = useRef();
+  const imgRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
 
-  useEffect(
-    function () {
-      ref.current.src = src;
-    },
-    [src],
-  );
+  useEffect(() => {
+    const loadImg = function (entries, observer) {
+      const [entry] = entries;
+      if (!entry.isIntersecting) return;
 
-  const handleImageLoad = function () {
-    ref.current.classList.remove("lazy-img");
-  };
+      setIsVisible(true);
+      observer.disconnect();
+
+      entry.target.addEventListener("load", function () {
+        entry.target.classList.remove("lazy-img");
+      });
+
+      observer.unobserve(entry.target);
+    };
+
+    const imgObserver = new IntersectionObserver(loadImg, {
+      rootMargin: "200px",
+    });
+
+    if (imgRef.current) imgObserver.observe(imgRef.current);
+
+    return () => imgObserver.disconnect();
+  }, []);
 
   return (
     <img
-      ref={ref}
-      className={`lazy-img ${className}`}
-      src={lazySrc}
+      ref={imgRef}
+      src={isVisible ? src : lazySrc}
       alt={alt}
-      onLoad={handleImageLoad}
+      className={`lazy-img ${className}`}
       {...props}
     />
   );

@@ -1,10 +1,12 @@
+import { LiaEnvelope, LiaInstagram, LiaLinkedin } from "react-icons/lia";
 import LazyImage from "../../../UI/LazyImage";
 import MyLanguages from "./MyLanguages";
+import { sectionPadding } from "./sectionPadding";
 
 function HeroSection() {
   return (
-    <section className="bg-primary-50 slg:py-14 py-6 sm:py-12">
-      <div className="c-container slg:gap-10 flex flex-col gap-16 sm:grid sm:grid-cols-2 sm:gap-2 md:gap-8 lg:gap-16 xl:gap-32">
+    <section className={`bg-primary-50 ${sectionPadding} relative pt-8`}>
+      <div className="hero-container slg:gap-10 flex flex-col gap-16 sm:grid sm:grid-cols-2 sm:gap-2 md:gap-8 lg:gap-16 xl:gap-32">
         <div className=" ">
           <h1 className="slg:text-3xl slg:mb-8 mb-6 text-2xl font-bold text-gray-700 lg:text-4xl xl:text-5xl">
             Hi, I'm Hamed jahangiry
@@ -21,20 +23,54 @@ function HeroSection() {
             <span className="rounded-md bg-red-100 px-2 py-0.5 text-red-700">
               ✔️ Mobile developer
             </span>{" "}
-            <span className="rounded-md bg-green-200 px-2 py-0.5 text-green-700">
+            {/* <span className="rounded-md bg-green-200 px-2 py-0.5 text-green-700">
               ✔️ DEVOPS
-            </span>
+            </span> */}
           </p>
           <MyLanguages />
         </div>
 
         <div className="sm:self-center">
-          <LazyImage
-            src="img/me.jpg"
-            alt="My picture"
-            className="w-full rounded-md border border-gray-200"
-          />
+          <div className="mx-auto w-[85%]">
+            <LazyImage
+              src="img/me.jpg"
+              alt="My picture"
+              className="h-full w-full rounded-md border border-gray-200 object-cover"
+            />
+          </div>
         </div>
+      </div>
+
+      <div className="xs40:px-4 absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 rounded-xl bg-gray-800/50 px-1.5 py-4 text-xs text-gray-50 shadow md:p-6 md:text-base">
+        <ul className="flex items-center gap-2 md:gap-4">
+          <li>
+            <a
+              href="https://www.linkedin.com/"
+              className="bg-primary-500 flex items-center gap-2 rounded-full px-3 py-1"
+            >
+              <span>linkedin</span>
+              <LiaLinkedin className="fill-primary-50 size-5 md:size-6" />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.instagram.com/hamed_j_73"
+              className="bg-primary-500 flex items-center gap-2 rounded-full px-3 py-1"
+            >
+              <span>instagram</span>
+              <LiaInstagram className="fill-primary-50 size-5 md:size-6" />
+            </a>
+          </li>
+          <li>
+            <a
+              href="mailto:hamedjahangiry.dev@gamil.com"
+              className="bg-primary-500 flex items-center gap-2 rounded-full px-3 py-1"
+            >
+              <span>email</span>
+              <LiaEnvelope className="fill-primary-50 size-5 md:size-6" />
+            </a>
+          </li>
+        </ul>
       </div>
     </section>
   );
