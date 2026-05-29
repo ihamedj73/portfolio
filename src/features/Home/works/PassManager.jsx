@@ -23,7 +23,7 @@ function PassManager() {
           />
         </div>
         <a
-          href="#"
+          href="https://github.com/ihamedj73/password-manager"
           className="text-primary-600 border-b-primary-600 border-b pb-0.5"
         >
           See the project on GitHub
