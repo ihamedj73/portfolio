@@ -1,11 +1,26 @@
+import { useAnimation } from "../../../hooks/useAnimation";
 import LazyImage from "../../../UI/LazyImage";
 import Technologies from "./Technologies";
 
 function PassManager() {
+  const desRef = useAnimation(animateDes);
+  const imageRef = useAnimation(animateImage);
+
+  function animateDes() {
+    desRef.current.classList.remove("opacity-0");
+    desRef.current.classList.remove("translate-x-20");
+  }
+  function animateImage() {
+    imageRef.current.classList.remove("-translate-x-20");
+    imageRef.current.classList.remove("opacity-0");
+  }
   return (
     <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 sm:items-center sm:gap-14 md:gap-18 lg:gap-28 xl:gap-36">
       {/* Description Box */}
-      <div className="flex flex-col gap-3 sm:col-[2/3] sm:row-[1/2] lg:gap-5">
+      <div
+        ref={desRef}
+        className="flex translate-x-20 flex-col gap-3 opacity-0 duration-400 sm:col-[2/3] sm:row-[1/2] lg:gap-5"
+      >
         <h3 className="text-lg font-bold text-gray-600 uppercase lg:text-xl">
           Password Manager
         </h3>
@@ -24,14 +39,17 @@ function PassManager() {
         </div>
         <a
           href="https://github.com/ihamedj73/password-manager"
-          className="text-primary-600 border-b-primary-600 border-b pb-0.5"
+          className="text-primary-600 border-b-primary-600 self-start border-b pb-0.5"
         >
           See the project on GitHub
         </a>
       </div>
 
       {/* Image Box */}
-      <div className="sm:row[1/2] justify-self-center sm:col-[1/2]">
+      <div
+        ref={imageRef}
+        className="sm:row[1/2] -translate-x-20 justify-self-center opacity-0 duration-400 sm:col-[1/2]"
+      >
         <LazyImage
           src={"/img/pass-manager.png"}
           alt={"password manager"}

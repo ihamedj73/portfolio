@@ -1,10 +1,22 @@
+import { useAnimation } from "../../../hooks/useAnimation";
 import { sectionPadding } from "../heroSection/sectionPadding";
 import { COURSES_DATA } from "./courseData";
 import CourseList from "./CourseList";
 
 function Courses() {
+  const sectionRef = useAnimation(animateSection);
+
+  function animateSection() {
+    sectionRef.current.classList.remove("translate-y-20");
+    sectionRef.current.classList.remove("opacity-0");
+  }
+
   return (
-    <section id="courses" className={`${sectionPadding} `}>
+    <section
+      ref={sectionRef}
+      id="courses"
+      className={`${sectionPadding} translate-y-20 opacity-0 duration-400`}
+    >
       <div className="c-container">
         <span className="text-primary-500 mb-1 block text-sm font-bold uppercase md:text-base">
           Courses I took

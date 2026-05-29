@@ -1,17 +1,42 @@
+import { useEffect, useRef } from "react";
 import { sectionPadding } from "../heroSection/sectionPadding";
 import GamaGain from "./GamaGain";
 import PassManager from "./PassManager";
 import ShikoDelbar from "./ShikoDelbar";
+import { useAnimation } from "../../../hooks/useAnimation";
 
 function Works() {
+  const sectionRef = useAnimation(animate);
+
+  function animate() {
+    // select heading and description
+    const heading = sectionRef.current.querySelector("#works-header");
+    const description = sectionRef.current.querySelector("#works-description");
+    // animate them
+    heading.classList.remove("opacity-0");
+    heading.classList.remove("-translate-x-24");
+    description.classList.remove("opacity-0");
+    description.classList.remove("translate-y-12");
+  }
+
   return (
-    <section id="works" className={`${sectionPadding} bg-gray-25`}>
+    <section
+      ref={sectionRef}
+      id="works"
+      className={`${sectionPadding} bg-gray-25`}
+    >
       {/* Works header */}
       <div className="c-container">
-        <h2 className="mb-3 text-center text-xl font-bold text-gray-700 sm:text-2xl md:text-2xl xl:text-3xl">
+        <h2
+          id="works-header"
+          className="mb-3 -translate-x-24 text-center text-xl font-bold text-gray-700 opacity-0 duration-300 sm:text-2xl md:text-2xl xl:text-3xl"
+        >
           Some of my works
         </h2>
-        <p className="mb-8 text-center leading-[1.6] sm:mb-10 sm:text-lg md:mb-16 md:text-xl lg:mb-20 xl:mb-24">
+        <p
+          id="works-description"
+          className="mb-8 translate-y-12 text-center leading-[1.6] opacity-0 delay-300 duration-300 sm:mb-10 sm:text-lg md:mb-16 md:text-xl lg:mb-20 xl:mb-24"
+        >
           These are projects that I built myself from scratch, from design to
           coding.
         </p>

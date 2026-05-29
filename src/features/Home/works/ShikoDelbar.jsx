@@ -1,11 +1,29 @@
+import { useAnimation } from "../../../hooks/useAnimation";
 import LazyImage from "../../../UI/LazyImage";
 import Technologies from "./Technologies";
 
 function ShikoDelbar() {
+  const descRef = useAnimation(animateDesc);
+  const imageRef = useAnimation(animateImage);
+
+  function animateDesc() {
+    descRef.current.classList.remove("-translate-x-20");
+    descRef.current.classList.remove("translate-y-12");
+    descRef.current.classList.remove("opacity-0");
+  }
+  function animateImage() {
+    imageRef.current.classList.remove("translate-x-20");
+    imageRef.current.classList.remove("translate-y-12");
+    imageRef.current.classList.remove("opacity-0");
+  }
+
   return (
     <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 sm:items-center sm:gap-14">
       {/* Description Box */}
-      <div className="flex flex-col gap-3 lg:gap-5">
+      <div
+        ref={descRef}
+        className="flex -translate-x-20 translate-y-12 flex-col gap-3 opacity-0 duration-400 lg:gap-5"
+      >
         <h3 className="text-lg font-bold text-gray-600 uppercase lg:text-xl">
           Shik O Delbar
         </h3>
@@ -37,7 +55,10 @@ function ShikoDelbar() {
       </div>
 
       {/* Image Box */}
-      <div className="justify-self-center">
+      <div
+        ref={imageRef}
+        className="translate-x-20 translate-y-12 justify-self-center opacity-0 duration-400"
+      >
         <LazyImage
           src={"/img/shikdelbar.png"}
           alt={"shik o delbar"}
