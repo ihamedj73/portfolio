@@ -1,4 +1,4 @@
-import { LiaEnvelope, LiaInstagram, LiaLinkedin } from "react-icons/lia";
+import { LiaEnvelope, LiaGithub, LiaLinkedin } from "react-icons/lia";
 import LazyImage from "../../../UI/LazyImage";
 import MyLanguages from "./MyLanguages";
 import { sectionPadding } from "./sectionPadding";
@@ -45,20 +45,14 @@ function HeroSection() {
         <ul className="flex items-center gap-2 md:gap-4">
           <li>
             <a
-              href="https://www.linkedin.com/"
+              href="https://github.com/ihamedj73"
+              rel="noopener"
+              target="_blank"
               className="bg-primary-500 flex items-center gap-2 rounded-full px-3 py-1"
             >
-              <span>linkedin</span>
-              <LiaLinkedin className="fill-primary-50 size-5 md:size-6" />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.instagram.com/hamed_j_73"
-              className="bg-primary-500 flex items-center gap-2 rounded-full px-3 py-1"
-            >
-              <span>instagram</span>
-              <LiaInstagram className="fill-primary-50 size-5 md:size-6" />
+              <span>Github</span>
+
+              <LiaGithub className="fill-primary-50 size-5 md:size-6" />
             </a>
           </li>
           <li>
@@ -68,6 +62,15 @@ function HeroSection() {
             >
               <span>email</span>
               <LiaEnvelope className="fill-primary-50 size-5 md:size-6" />
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              className="bg-primary-500 flex items-center gap-2 rounded-full px-3 py-1"
+            >
+              <span>linkedin</span>
+              <LiaLinkedin className="fill-primary-50 size-5 md:size-6" />
             </a>
           </li>
         </ul>
