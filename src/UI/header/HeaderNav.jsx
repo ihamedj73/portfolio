@@ -21,7 +21,7 @@ function HeaderNav() {
             !open ? "invisible -translate-x-full" : ""
           }`}
         >
-          <ul className="z-40 flex flex-col items-center gap-6 text-lg font-medium md:z-0 md:flex-row">
+          <ul className="z-40 flex flex-col items-center gap-6 text-lg font-bold text-gray-600 md:z-0 md:flex-row">
             <li>
               <a href="#skills" onClick={(e) => handleGotoSection(e, "skills")}>
                 Skills
