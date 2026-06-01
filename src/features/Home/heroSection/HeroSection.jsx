@@ -5,7 +5,10 @@ import { sectionPadding } from "./sectionPadding";
 
 function HeroSection() {
   return (
-    <section className={`bg-primary-50 ${sectionPadding} relative pt-8`}>
+    <section
+      id="hero-section"
+      className={`bg-primary-50 ${sectionPadding} relative pt-8`}
+    >
       <div className="hero-container slg:gap-10 flex flex-col gap-16 sm:grid sm:grid-cols-2 sm:gap-2 md:gap-8 lg:gap-16 xl:gap-32">
         <div className=" ">
           <h1 className="slg:text-3xl slg:mb-8 mb-6 text-2xl font-bold text-gray-700 lg:text-4xl xl:text-5xl">

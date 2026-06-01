@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { HiMenu, HiOutlineX } from "react-icons/hi";
 import HeaderLogo from "./HeaderLogo";
 
@@ -12,8 +12,47 @@ function HeaderNav() {
     SkillsSectionEl.scrollIntoView({ behavior: "smooth" });
   }
 
+  useEffect(function () {
+    // Sticky nav
+    const headerEl = document.querySelector("#main-header");
+    const headerHight = headerEl.getBoundingClientRect().height;
+    const heroEl = document.querySelector("#hero-section");
+
+    const stickyNavClasses = "fixed top-0 right-0 left-0 z-10";
+
+    const stickyNav = function (entries) {
+      const entry = entries.at(0);
+      if (!entry.isIntersecting) {
+        headerEl.classList.add("fixed");
+        headerEl.classList.add("top-0");
+        headerEl.classList.add("right-0");
+        headerEl.classList.add("left-0");
+        headerEl.classList.add("z-10");
+      } else {
+        headerEl.classList.remove("fixed");
+        headerEl.classList.remove("top-0");
+        headerEl.classList.remove("right-0");
+        headerEl.classList.remove("left-0");
+        headerEl.classList.remove("z-10");
+      }
+    };
+
+    const heroObserver = new IntersectionObserver(stickyNav, {
+      root: null,
+      threshold: 0,
+      rootMargin: `-${headerHight}px`,
+    });
+
+    heroObserver.observe(heroEl);
+
+    return () => heroObserver.disconnect();
+  }, []);
+
   return (
-    <header className="bg-primary-50 border-b border-b-gray-100 py-3">
+    <header
+      id="main-header"
+      className="bg-primary-50 border-b border-b-gray-100 py-3"
+    >
       <div className="c-container flex items-center justify-between">
         <HeaderLogo />
         <nav

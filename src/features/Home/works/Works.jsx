@@ -40,7 +40,7 @@ function Works() {
           These are projects that I built myself from scratch, from design to
           coding.
         </p>
-        <div className="flex flex-col gap-12 md:gap-16 lg:gap-20 xl:gap-24">
+        <div className="flex flex-col gap-12 overflow-y-hidden md:gap-16 lg:gap-20 xl:gap-24">
           <ShikoDelbar />
           <GamaGain />
           <PassManager />
