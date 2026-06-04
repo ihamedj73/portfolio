@@ -40,11 +40,14 @@ function Works() {
           These are projects that I built myself from scratch, from design to
           coding.
         </p>
-        <div className="flex flex-col gap-12 overflow-y-hidden md:gap-16 lg:gap-20 xl:gap-24">
+        <div className="mb-8 flex flex-col gap-12 overflow-y-hidden sm:mb-10 md:mb-16 md:gap-16 md:overflow-visible lg:mb-20 lg:gap-20 xl:mb-24 xl:gap-24">
           <ShikoDelbar />
           <GamaGain />
           <PassManager />
         </div>
+        <p className="text-center font-semibold sm:text-lg md:text-xl lg:text-2xl">
+          I even designed and built this portfolio project myself ☺️
+        </p>
       </div>
     </section>
   );
