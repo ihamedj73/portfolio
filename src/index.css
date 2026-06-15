@@ -34,7 +34,7 @@
   --color-gray-900: #14181f;
 }
 
-.hero-container {
+.big-container {
   @apply xs32:px-4 xs40:px-5 xs56:px-6 mx-auto max-w-7xl px-2.5 sm:px-8 md:px-9 lg:px-10 xl:px-12 2xl:max-w-[96rem] 2xl:px-24;
 }
 

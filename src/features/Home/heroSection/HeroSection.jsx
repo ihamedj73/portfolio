@@ -9,7 +9,7 @@ function HeroSection() {
       id="hero-section"
       className={`bg-primary-50 ${sectionPadding} relative pt-8`}
     >
-      <div className="hero-container slg:gap-10 flex flex-col gap-16 sm:grid sm:grid-cols-2 sm:gap-2 md:gap-8 lg:gap-16 xl:gap-32">
+      <div className="big-container slg:gap-10 flex flex-col gap-16 sm:grid sm:grid-cols-2 sm:gap-2 md:gap-8 lg:gap-16 xl:gap-32">
         <div className=" ">
           <h1 className="slg:text-3xl slg:mb-8 mb-6 text-2xl font-bold text-gray-700 lg:text-4xl xl:text-5xl">
             Hi, I'm Hamed jahangiry
@@ -44,7 +44,7 @@ function HeroSection() {
         </div>
       </div>
 
-      <div className="xs40:px-4 absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 rounded-xl bg-gray-800/50 px-1.5 py-4 text-xs text-gray-50 shadow md:p-6 md:text-base">
+      <div className="xs40:px-4 bg-primary-100 absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 -rotate-1 rounded-xl px-1.5 py-4 text-xs text-gray-50 shadow-[0_0_24px_rgba(21,93,252,0.8)] md:p-6 md:text-base">
         <ul className="flex items-center gap-2 md:gap-4">
           <li>
             <a

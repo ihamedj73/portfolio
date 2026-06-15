@@ -53,7 +53,7 @@ function HeaderNav() {
       id="main-header"
       className="bg-primary-50 border-b border-b-gray-100 py-3"
     >
-      <div className="c-container flex items-center justify-between">
+      <div className="big-container flex items-center justify-between">
         <HeaderLogo />
         <nav
           className={`fixed top-0 left-0 z-10 flex h-full w-full items-center justify-center bg-white/50 text-gray-600 backdrop-blur-md transition-all duration-300 ease-in-out md:visible md:static md:h-auto md:w-fit md:translate-x-0 md:bg-inherit md:backdrop-blur-none ${
