@@ -44,7 +44,7 @@ function WildOasis() {
           />
         </div>
         <a
-          href="#"
+          href="https://github.com/ihamedj73/The-while-oasis-admin"
           className="text-primary-600 border-b-primary-600 self-start border-b pb-0.5"
         >
           See the project on GitHub
