@@ -4,6 +4,7 @@ import GamaGain from "./GamaGain";
 import PassManager from "./PassManager";
 import ShikoDelbar from "./ShikoDelbar";
 import { useAnimation } from "../../../hooks/useAnimation";
+import WildOasis from "./WildOasis";
 
 function Works() {
   const sectionRef = useAnimation(animate);
@@ -44,6 +45,7 @@ function Works() {
           <ShikoDelbar />
           <GamaGain />
           <PassManager />
+          <WildOasis />
         </div>
         <p className="text-center font-semibold sm:text-lg md:text-xl lg:text-2xl">
           I even designed and built this portfolio project myself ☺️

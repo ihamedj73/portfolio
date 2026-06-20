@@ -92,6 +92,7 @@ function HeaderNav() {
         <button
           className="from-primary-50 to-primary-100 z-50 rounded-full bg-linear-to-tr p-1 md:hidden"
           onClick={() => setOpen((open) => !open)}
+          aria-label={`${open ? "close" : "open"} nav`}
         >
           {!open ? (
             <HiMenu className="h-8 w-8" />

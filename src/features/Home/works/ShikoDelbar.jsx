@@ -46,12 +46,12 @@ function ShikoDelbar() {
             techs={["Nextjs", "Tailwindcss"]}
           />
         </div>
-        <a
+        {/* <a
           href="#"
           className="text-primary-600 border-b-primary-600 self-start border-b pb-0.5"
         >
           See the project demo
-        </a>
+        </a> */}
       </div>
 
       {/* Image Box */}
